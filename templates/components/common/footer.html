@@ -1,0 +1,429 @@
+{{#if banners.bottom}}
+    {{#if settings.data_tag_enabled}}
+        <div class="banners" data-banner-location="bottom">
+            {{#each (limit banners.bottom_metadata 1)}}
+                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                    <div data-event-type="promotion-click">
+                        {{{this.content}}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="banners" data-banner-location="bottom">
+            <div class="banner">
+                {{{limit banners.bottom 1}}}
+            </div>
+        </div>
+    {{/if}}
+
+{{/if}}
+{{{region name="home_above_footer"}}}
+<footer class="footer" role="contentinfo">
+    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
+    {{#if theme_settings.theme_fashion}}
+    <div class="newslatter-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="webi-subscribe">
+                        {{> components/common/subscription-form}}
+                    </div>      
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer second -->
+    <div class="footer-nav">
+        <div class="container">
+            <div class="row">
+                <!-- about us section -->
+                <div class="col-lg-3 col-sm-3 col-12 foot-about fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
+                    <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.about'}}
+                        <div class="collapse-icon">
+                            <div class="acc-close"></div>
+                            <div class="acc-open"></div>
+                        </div>
+                    </h3>
+                    <div id="descwrapper" class="desWrapper">
+                        <p>{{theme_settings.footer-about-content-1}}</p>
+                        <p>{{theme_settings.footer-about-content-2}}</p>
+                        <p>{{theme_settings.footer-about-content-3}}</p>
+                        <p>{{theme_settings.footer-about-content-4}}</p>
+                        {{#if theme_settings.social_icon_placement_top}}
+                            {{> components/common/social-links}}
+                        {{/if}}
+                     </div>
+                    </article>
+                </div>
+               <!-- navigation section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-navigate fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.navigate'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                    <div id="descwrapper" class="desWrapper">
+                        <ul class="footer-info-list">
+                            {{#each pages}}
+                                <li>
+                                    <a href="{{url}}">{{name}}</a>
+                                </li>
+                            {{/each}}
+                            <!-- Sphere: Agregar página nuestras tiendas -->
+                            <li>
+                                <a href="/nuestras-tiendas/">Nuestras Tiendas</a>
+                            </li>
+                            <!-- <li>
+                                <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    </article>
+               </div>
+               <!-- brands section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-brand fborder">
+                   {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.brands'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                        <div id="descwrapper" class="desWrapper">
+                            <ul class="footer-info-list">
+                                {{#each shop_by_brand}}
+                                    <li>
+                                        <a href="{{url}}">{{name}}</a>
+                                    </li>
+                                {{/each}}
+                                <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    {{/and}}
+               </div>
+               <!-- categorie section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-categorie fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.categories'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                        <div id="descwrapper" class="desWrapper">
+                            <ul class="footer-info-list">
+                               {{#each categories}}
+                                    {{#if @index '<' 7}}
+                                        <li>
+                                            <a href="{{url}}">{{name}}</a>
+                                        </li>
+                                    {{/if}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </article>
+               </div>
+                <!-- contact us section -->
+                <div class="col-lg-3 col-sm-3 col-12 foot-sec foot-contact fborder">
+                  
+                    {{#if settings.address}}
+                    <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.info'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                          
+                    <div id="descwrapper" class="desWrapper">
+                          <div class="custom_footer_logo"> <a href="https://reclamovirtual.pe/reclamar/34795b07-1d43-486b-adab-9124a2df38ff/librodereclamaciones">
+                          <img src="https://cdn11.bigcommerce.com/s-dkxrakxun7/images/stencil/original/image-manager/libro-reclamaciones-negro-1-.png" alt="" />
+                    </a>
+                         </div>
+                        
+                        <span class="foot-address"><svg width="20px" height="18px"><use xlink:href="#foot-add"></use></svg></span>
+                        <address>{{settings.address}}</address>
+                        {{#if settings.phone_number}}
+                            <!--<strong class="foot-phone"><span><svg width="20px" height="18px"><use xlink:href="#call-icon"></use></svg></span>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>-->
+                              <strong class="foot-phone"><span><svg width="20px" height="18px"><use xlink:href="#call-icon"></use></svg></span>  <a href="https://api.whatsapp.com/send?phone=51924886303&amp;text=Bienvenida%20a%20BRUJHA%27S.%20%C2%BFC%C3%B3mo%20podemos%20ayudarte%20hoy%3F&amp;_kx=">+51 924 886 303</a></strong>
+                        {{/if}}
+                    </div>
+                    </article>
+                {{/if}}
+                </div>
+            </div>
+        </div> 
+    </div>
+    </div>
+    {{else}} 
+    {{#if theme_settings.theme_automotive}}
+    <!-- footer second -->
+    <div class="footer-nav">
+        <div class="container">
+            <div class="row">
+                <!-- contact us section -->
+                <div class="col-lg-3 col-sm-3 col-12 foot-sec foot-contact fborder">
+                    {{#if settings.address}}
+                    <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.info'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                    <div id="descwrapper" class="desWrapper">
+                        <span class="foot-address"><svg width="20px" height="18px"><use xlink:href="#foot-add"></use></svg></span>
+                        <address>{{settings.address}}</address>
+                        {{#if settings.phone_number}}
+                            <strong class="foot-phone"><span><svg width="20px" height="18px"><use xlink:href="#call-icon"></use></svg></span>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
+                        {{/if}}
+                    </div>
+                    </article>
+                {{/if}}
+                </div>
+               <!-- navigation section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-navigate fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.navigate'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                    <div id="descwrapper" class="desWrapper">
+                        <ul class="footer-info-list">
+                            {{#each pages}}
+                                <li>
+                                    <a href="{{url}}">{{name}}</a>
+                                </li>
+                            {{/each}}
+                            <li>
+                                <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    </article>
+               </div>
+               <!-- brands section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-brand fborder">
+                   {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.brands'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                        <div id="descwrapper" class="desWrapper">
+                            <ul class="footer-info-list">
+                                {{#each shop_by_brand}}
+                                    <li>
+                                        <a href="{{url}}">{{name}}</a>
+                                    </li>
+                                {{/each}}
+                                <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    {{/and}}
+               </div>
+               <!-- categorie section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-categorie fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.categories'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                        <div id="descwrapper" class="desWrapper">
+                            <ul class="footer-info-list">
+                               {{#each categories}}
+                                    {{#if @index '<' 7}}
+                                        <li>
+                                            <a href="{{url}}">{{name}}</a>
+                                        </li>
+                                    {{/if}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </article>
+               </div>
+               <!-- Newsletter section -->
+               <div class="col-lg-3 col-sm-3 col-12 foot-about fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'Nuestro boletín'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                        <div id="descwrapper" class="desWrapper newslatter-footer">
+                            <div class="webi-subscribe">
+                                {{> components/common/subscription-form}}
+                            </div> 
+                            {{#if theme_settings.social_icon_placement_top}}
+                                {{> components/common/social-links}}
+                            {{/if}}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}} 
+    {{#if theme_settings.theme_art}}
+    <!-- footer second -->
+    <div class="footer-nav">
+        <div class="container">
+            <div class="row">
+                <!-- contact us section -->
+                <div class="col-lg-3 col-sm-3 col-12 foot-sec foot-contact fborder">
+                    {{#if settings.address}}
+                    <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.info'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                    <div id="descwrapper" class="desWrapper">
+                        <span class="foot-address"><svg width="20px" height="18px"><use xlink:href="#foot-add"></use></svg></span>
+                        <address>{{settings.address}}</address>
+                        {{#if settings.phone_number}}
+                            <strong class="foot-phone"><span><svg width="20px" height="18px"><use xlink:href="#call-icon"></use></svg></span>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
+                        {{/if}}
+                    </div>
+                    </article>
+                {{/if}}
+                </div>
+               <!-- navigation section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-navigate fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.navigate'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                    <div id="descwrapper" class="desWrapper">
+                        <ul class="footer-info-list">
+                            {{#each pages}}
+                                <li>
+                                    <a href="{{url}}">{{name}}</a>
+                                </li>
+                            {{/each}}
+                            <li>
+                                <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    </article>
+               </div>
+               <!-- brands section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-brand fborder">
+                   {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.brands'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                        <div id="descwrapper" class="desWrapper">
+                            <ul class="footer-info-list">
+                                {{#each shop_by_brand}}
+                                    <li>
+                                        <a href="{{url}}">{{name}}</a>
+                                    </li>
+                                {{/each}}
+                                <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    {{/and}}
+               </div>
+               <!-- categorie section -->
+               <div class="col-lg-2 col-sm-2 col-12 foot-categorie fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'footer.categories'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                        <div id="descwrapper" class="desWrapper">
+                            <ul class="footer-info-list">
+                               {{#each categories}}
+                                    {{#if @index '<' 7}}
+                                        <li>
+                                            <a href="{{url}}">{{name}}</a>
+                                        </li>
+                                    {{/if}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </article>
+               </div>
+               <!-- Newsletter section -->
+               <div class="col-lg-3 col-sm-3 col-12 foot-about fborder">
+                    <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
+                        <h3 class="footer-info-heading titleWrapper inactive">{{lang 'Nuestro boletín'}}
+                            <div class="collapse-icon">
+                                <div class="acc-close"></div>
+                                <div class="acc-open"></div>
+                            </div>
+                        </h3>
+                        <div id="descwrapper" class="desWrapper newslatter-footer">
+                            <div class="webi-subscribe">
+                                {{> components/common/subscription-form}}
+                            </div> 
+                            {{#if theme_settings.social_icon_placement_top}}
+                                {{> components/common/social-links}}
+                            {{/if}}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{/if}}
+    {{/if}}
+    <div class="foot-copy">
+        <div class="container">
+            <div class="row last-footer">
+                <div class="col-md-6 col-12 text-left">
+                    {{#if settings.paypal_commerce_credit_message}}
+                        <div class="footer-copyright">
+                            <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>
+                        </div>
+                    {{/if}}
+                    {{#if theme_settings.show_powered_by}}
+                        <div class="footer-copyright">
+                            <p class="powered-by">{{lang 'footer.powered_by'}} <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
+                        </div>
+                    {{/if}}
+                    {{#if theme_settings.show_copyright_footer}}
+                        <div class="footer-copyright">
+                            <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="col-md-6 col-12 text-right">
+                    {{> components/common/payment-icons}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="" id="scroll" title="Scroll to Top" style="display: block;">
+        <svg width="16px" height="16px"><use xlink:href="#arrow-right"></use></svg>
+    </a>
+    {{{region name="ssl_site_seal--global"}}}
+</footer>

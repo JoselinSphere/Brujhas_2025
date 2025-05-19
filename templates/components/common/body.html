@@ -1,0 +1,51 @@
+<main class="body" id="main-content" role="main" data-currency-code="{{currency_selector.active_currency_code}}">
+    {{#block "hero"}} 
+    {{/block}}
+
+    <div class="top-bar" id="header_banner">
+        <button id="closeButton"><span>X</span></button> 
+      <div class="container section-gap announcementbar" >
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="header_bar">
+                    
+                    <div class="topBarPromotion-carousel"
+                    data-slick='{
+                        "dots": false,
+                        "arrows": false,
+                        "infinite": true,
+                        "mobileFirst": true,
+                        "vertical": false,
+                        "autoplay": true,
+                        "slidesToShow": 1,
+                        "slidesToScroll": 1,
+                        "responsive": [
+                            {
+                                "breakpoint": 768,
+                                "settings": {
+                                    "arrows": false
+                                }
+                            }
+                        ]
+                    }'
+                >       
+                        <div class="top-bar-f" aria-hidden="true">
+                            <a href="{{theme_settings.top_text_link}}" title="offer">{{theme_settings.top_text}}</a>         
+                        </div>
+                        <div class="top-bar-f" aria-hidden="true">
+                            <a href="{{theme_settings.top_text_link2}}" title="offer">{{theme_settings.top_text2}}</a>              
+                        </div>
+                </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="">
+        {{#block "page"}} {{/block}}
+    </div>
+
+    {{> components/common/modal/modal}}
+    {{> components/common/alert/alert-modal}}
+</main>

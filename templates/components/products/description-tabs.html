@@ -1,0 +1,49 @@
+<ul class="tabs" data-tab style="display: flex; justify-content: center;">
+    <li class="tab is-active">
+        <a class="tab-title" href="#tab-description">DESCRIPCIÓN</a>
+    </li>
+    <li class="tab">
+        <a class="tab-title" href="#tab-detail" >DETALLE</a>
+    </li>
+    <li class="tab">
+        <a class="tab-title" href="#tab-shipping">ENVÍO</a>
+    </li>
+</ul>
+
+<div class="tabs-contents">
+    <div class="tab-content is-active" id="tab-description"></div>
+    <div class="tab-content" id="tab-detail" >
+    </div>
+    <div class="tab-content" id="tab-shipping">
+        <p>
+            Queremos asegurarnos de que recibas tus pedidos en el menor tiempo posible. A continuación, te detallamos nuestros tiempos de entrega para cada opción disponible: <br>
+<br>
+            📍 Lima: Entre 2 a 6 días hábiles <br>
+            📍 Provincia: Entre 4 a 7 días hábiles <br>
+            📍 Recojo en tienda: Disponible en 2 a 4 días hábiles <br>
+            <br>
+            Una vez que tu pedido esté listo, te notificaremos para que puedas seguir el estado de tu entrega. ¡Gracias por confiar en nosotros! 💕
+        </p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const descriptionElement = document.getElementById("tab-description");
+        const detailElement = document.getElementById("tab-detail");
+        
+        const descriptionContent = `{{{product.description}}}`;
+        
+        if (descriptionContent.trim() !== "") {
+            const splitContent = descriptionContent.includes("<!-- split -->") 
+                ? descriptionContent.split("<!-- split -->")
+                : [descriptionContent, ""];
+
+            descriptionElement.innerHTML = `<div '>${splitContent[0].trim()}</div>` || "<p>No hay descripción disponible.</p>";
+            detailElement.innerHTML = `<div'>${splitContent[1].trim()}</div>` || "<p>No hay detalles disponibles.</p>";
+        } else {
+            descriptionElement.innerHTML = "<p>No hay descripción disponible.</p>";
+            detailElement.innerHTML = "<p>No hay detalles disponibles.</p>";
+        }
+    });
+</script>

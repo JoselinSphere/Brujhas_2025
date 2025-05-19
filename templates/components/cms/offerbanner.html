@@ -1,0 +1,73 @@
+{{#if theme_settings.home-offer-banner}}
+	<div class="section-spacing">
+		<div class="videobanner-bg-offer">
+			<div class="container-fluid">
+				<div class="off-img off-img-one">
+					{{#if theme_settings.offerbanner-first-img}}
+						<div class="video-img-banner">
+							<a href="#"><img class="img-fluid lazyload" data-sizes="auto" src="{{cdn '/assets/img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.offerbanner-first-img}}"  alt="banner"/></a>
+							<!-- {{#for 1 12}}
+								<p>demo content</p>
+							{{/for}} -->
+						</div>
+					{{/if}}
+					<div class="vidhover">
+						<div class="video-content">
+							<h1>{{theme_settings.Video-banner-content-heading}}</h1>
+							<p>{{theme_settings.Video-banner-content-subheading}}</p>
+						</div>
+						<button id="modal-btn" class="button" aria-label="play-video">
+							<span class="play-video">
+								<svg width="80px" height="80px"> <use xlink:href="#video"></use></svg>
+							</span>
+						</button>
+						<div id="vedioModal" class="modal fade" role="dialog">						
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close-button">×</button>
+									<div class="modal-body">
+										<!-- <iframe class="videolink" src="{{theme_settings.video-banner-video-link}}" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" width="100%" height="360" frameborder="0">
+										</iframe> -->
+
+										<iframe width="1250" height="703" src="https://www.youtube.com/embed/-eicz7K-uys" title="erne Unleashed: Elevating Your Game, Defining Your Style" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{{/if}}
+
+<script>
+	// video modal
+	$(document).ready(function(){
+			// Get the modal
+			var modal = document.getElementById("vedioModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("modal-btn");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks the button, open the modal 
+			btn.onclick = function() {
+			modal.style.display = "block";
+			}
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+	});
+</script>

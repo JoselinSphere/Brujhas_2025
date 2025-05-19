@@ -1,0 +1,65 @@
+<section class="heroCarousel"
+    data-slick='{
+        "arrows": {{arrows}},
+        "mobileFirst": true,
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "autoplay": true,
+        "autoplaySpeed": {{carousel.swap_frequency}},
+        "slide": "[data-hero-slide]"
+    }'
+>
+    {{#each carousel.slides}}
+    {{#if button_text}}
+    <div data-hero-slide="{{@index}}">
+    {{else}}
+    <a href="{{url}}" data-hero-slide="{{@index}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}">
+    {{/if}}
+        <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
+            {{#if button_text}}
+            <a href="{{url}}" class="heroCarousel-image-wrapper" aria-label="slider_image">
+            {{else}}
+            <div class="heroCarousel-image-wrapper">
+            {{/if}}
+            {{#if @first}}
+            <picture>
+                <!--JRivas: 24/03/2025 Imagenes en version movil para el carousel-->
+                <!-- <source media="(max-width: 600px)" srcset="/assets/img/mobile-slide-{{@index}}.jpg"> -->
+                <source media="(max-width: 600px)" srcset="/content/mobile-slide-{{@index}}.jpg">
+                <img
+                    src="{{getImage stencil_image '1280w'}}"
+                    alt="{{alt_text}}"
+                    class="heroCarousel-image"
+                    loading="{{#if @first}}eager{{else}}lazy{{/if}}"
+                />
+            </picture>            
+            {{else}}
+                {{> components/common/responsive-img
+                    image=stencil_image
+                    class="heroCarousel-image"
+                    fallback_size='1280w'
+                    lazyload='lazyload'
+                }}
+            {{/if}}
+            {{#if button_text}}
+            </a>
+            {{else}}
+            </div>
+            {{/if}}
+            {{#or heading text button_text}}
+                {{> components/carousel-content}}
+            {{/or}}
+        </div>
+    {{#if button_text}}
+    </div>
+    {{else}}
+    </a>
+    {{/if}}
+    {{/each}}
+    {{#if carousel.slides.length '>' 1}}
+        {{> components/carousel-content-announcement}}
+        {{#if play_pause_button}}
+            {{> components/carousel-play-pause-button}}
+        {{/if}}
+    {{/if}}
+</section>

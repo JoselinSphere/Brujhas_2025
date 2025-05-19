@@ -1,0 +1,53 @@
+// =============================================================================
+// PRICE (CSS)
+// =============================================================================
+
+.price--rrp,
+.price--non-sale,
+.price--discounted {
+    text-decoration: line-through;
+}
+
+.price-section--minor {
+    color: color("greys", "light");
+}
+.price-now-label {
+    display: none!important;
+}
+
+.price {
+    text-align: center!important;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0;
+    color: stencilColor("color-textBase");
+}
+.price--discounted, .price--non-sale, .price--rrp {
+    text-decoration: line-through;
+    color: stencilColor("color-primary");
+    font-weight: normal;
+    font-size: 14px !important;
+    display: inline-block;
+}
+.productView-price .rrp-price--withoutTax .price--rrp{
+    font-size: 14px!important;
+}
+.productView-price .price-section--saving .price{
+    font-size: 18px;
+}
+@media(max-width: 991px){
+    .price{
+        font-size: 16px;
+    }
+    .price--discounted, .price--non-sale, .price--rrp{
+        font-size: 12px !important;
+    }
+}
+@media(max-width: 425px){
+    .price{
+        font-size: 15px;
+    }
+    .price--discounted, .price--non-sale, .price--rrp{
+        font-size: 12px !important;
+    }
+}
