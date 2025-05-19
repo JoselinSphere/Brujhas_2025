@@ -2,13 +2,14 @@
 {{#if theme_settings.theme_fashion}}
 <div>
     <div class="cate-bg container">
-        <div class="category-head myheadeing">
+        <!-- Titulo de la categoría -->
+        <!-- <div class="category-head myheadeing">
             <h2 class="page-heading">
                 {{lang 'common.cate' }}
                 <p>{{theme_settings.subheading-category}}</p>
                 <span class="head-line"></span>
             </h2>
-        </div>
+        </div> -->
         <div class="homecategory row cate-row pre-row">
             <div class="all-cate caro-btn topsp col-12 pre-col all-head-contant">
                 <div class="homecate">
@@ -59,7 +60,7 @@
                                 {
                                     "breakpoint": 424,
                                     "settings": {
-                                        "slidesToShow": 2,
+                                        "slidesToShow": 1,
                                         "slidesToScroll": 1
                                     }
                                 },
@@ -74,15 +75,15 @@
                             }'>
                         {{#each categories }}
                         <!-- <div class="home-cate-item col-12 pre-col"> -->
-                        <div class="home-cate-item col-4 col-md-4 col-lg-3 pre-col">
-                            <div class="catebg">
-                                <div class="cate-img">
-                                    <a class="img-card" href="{{url}}"><img src="{{getImage image}}" alt="Category-image"></a>
-                                </div>
-                            </div>
-                            <div class="cate-ti">
-                                <a class="catename" href="{{url}}">{{name}}</a>
-                                <p>{{count}}<span>{{lang 'artículos'}}</span></p>
+                        <div class="col-12 col-sm-6 col-md-3 mb-4">
+                            <div class="cate-img">
+                                <a href="{{url}}">
+                                    <img src="{{getImage image}}" alt="{{name}}">
+                                    <div class="cate-ti-overlay">
+                                        <span class="catename">{{name}}</span>
+                                        <a href="{{url}}" class="cate-btn">VER TODO</a>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         {{/each}}

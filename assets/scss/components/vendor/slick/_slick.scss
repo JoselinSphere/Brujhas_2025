@@ -386,8 +386,8 @@ div.slick-slider {
     margin: 0px 5px;
     text-align: center;
     display: inline-block;
-    width: 2.28571rem;
-    height: 2.28571rem;
+    width: 100%;//2.28571rem;
+    //height: 2.28571rem;
     transform: none;
     background-color: stencilColor("secondary-background-color")!important; 
 }
@@ -412,13 +412,14 @@ div.slick-slider {
     .slick-dotted.slick-slider {
         margin-bottom: 0px;
     }
-    // Sphere: tamaño mas reducido en movil
+    // Sphere 19/05: tamaño mas alto en movil
     .topsp .slick-slide img {
         display: block;
-        width: 95%;
+        width: 100%;
         border-radius: 0px;
-        height: 250px;
+        height: 550px;
     } 
+
 }
 @media(max-width: 800px){
     .all-btn{

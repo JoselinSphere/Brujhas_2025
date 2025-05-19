@@ -137,21 +137,7 @@
 	display: none;
 }
 
-@media only screen and (max-width: 600px) {
-  #bc-carousel-container-4c1537fc-dba0-4aa7-9ce8-c37c3d330890 {
-	display: block;
-}
-.heroCarousel.slick-initialized.slick-slider {
-	display: none;
-}
-.css-15nrlmu.bc-carousel__bullet {
-	margin-top: -27px;
-	width: 8px;
-	height: 8px;
-	background: none;
-	border: 1px solid #fff !important;
-}
-}
+
 
 .guia-de-tallas .col-md-12 {
 	padding-left: 0px !important;
@@ -319,8 +305,11 @@
 
   @media (max-width: 700px) {
     // Ocultar categorias en mobile
-    .category-container.container .row.category-content.align-items-start {
-      display: none;
+    // .category-container.container .row.category-content.align-items-start {
+    //   display: none;
+    // }
+    .category-container.container .row.category-content.align-items-start .subcategories-container{
+        display: none;
     }
 
     // Ajustar margen de categorias en mobile
@@ -331,6 +320,20 @@
 
   // Sphere 2025/03/21
   @media only screen and (max-width: 600px) {
+
+      #bc-carousel-container-4c1537fc-dba0-4aa7-9ce8-c37c3d330890 {
+	display: block;
+}
+.heroCarousel.slick-initialized.slick-slider {
+	display: none;
+}
+.css-15nrlmu.bc-carousel__bullet {
+	margin-top: -27px;
+	width: 8px;
+	height: 8px;
+	background: none;
+	border: 1px solid #fff !important;
+}
     // Ocultar el carrusel de BigCommerce en móvil
     [id^="bc-carousel-container"] {
         display: none !important;
@@ -372,6 +375,9 @@
         height: 620px !important;
         min-height: 500px !important;
         
+    }
+    .catebg cate-img img-card {
+        height: 850px; // Sphere: Aumento de tamaño de la imagen categoria
     }
 }
 
