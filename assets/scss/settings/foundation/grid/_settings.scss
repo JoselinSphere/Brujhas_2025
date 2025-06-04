@@ -202,6 +202,7 @@ $last-child-float:              $opposite-direction;
     margin-right: auto;
     margin-left: auto;
 }
+//JR
 .col,
 .col-1,
 .col-10,
@@ -275,8 +276,9 @@ $last-child-float:              $opposite-direction;
     position: relative;
     width: 100%;
     min-height: 1px;
-    padding-right: 25px;
-    padding-left: 15px;
+    // espacios entre tarjetas en desktop 
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .col-1 {
     -webkit-box-flex: 0;
@@ -344,6 +346,7 @@ $last-child-float:              $opposite-direction;
     flex: 0 0 91.666667%;
     max-width: 91.666667%;
 }
+// JR tarjeta sin espacios en mobile
 .col-12 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 100%;
@@ -645,4 +648,12 @@ $last-child-float:              $opposite-direction;
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
+
+@media (max-width: 550px) {
+.col-12 {
+    padding-right: 0px;
+    padding-left: 0px;
+
+}
 }

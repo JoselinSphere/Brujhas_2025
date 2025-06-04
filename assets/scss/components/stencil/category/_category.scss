@@ -51,7 +51,7 @@
     align-items: center;
 }
 .actionBar .form-field{
-    margin: 0 0 0rem;
+    margin: 0 10;
 }
 .category-grid .active svg {
     fill: stencilColor("color-textBase--hover");
@@ -173,6 +173,7 @@
     .productGrid .product {
         max-width: 50%;
         width: 50%!important;
+        padding-right: 0px;
     }
 }
 @media(max-width: 375px){
@@ -215,4 +216,42 @@
         flex: 0 0 30%;
         max-width: 30%;
     }
+}
+
+// subcategorias 
+.subcategory-pill-scroll {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+}
+
+.subcategory-pill {
+    flex: 0 0 auto;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid #161616;
+    border-radius: 0px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.425); 
+}
+
+.subcategory-pill:hover {
+    background-color: #080808;
+    color: #fff;
+    border-color: #999;
+}
+
+.subcategory-pill.active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
 }

@@ -133,7 +133,7 @@
 }
 .quickSearchResults .productGrid {
     margin-bottom: 0;
-    padding: 15px 15px 15px 15px;
+    //padding: 15px 15px 15px 15px;
 }
 @media (min-width: 801px){
     .quickSearchResults .productGrid .product {
@@ -141,7 +141,7 @@
         -ms-flex: 0 0 50%!important;
         flex: 0 0 50%!important;
         width: 50%!important;
-        float: left;
+        //float: left;  
     }
 }
 @media (min-width: 601px){

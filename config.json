@@ -240,6 +240,8 @@
     "default_image_gift_certificate": "img/GiftCertificate.png",
     "body-font": "assets/custom/fonts/Geometric_415/f51aa01f15d5802d7ea9798beed11e7c.eot",
     "headings-font": "assets/custom/fonts/Avenir_Next_Pro/AvenirNextLTPro-UltLt.otf",
+    "headings-fontAvenir-regular": "assets/custom/fonts/Avenir-next-lt-pro/AvenirNextLTPro-Regular.otf",
+    "headings-fontAvenir-demi": "assets/custom/fonts/Avenir-next-lt-pro/AvenirNextLTPro-Demi.otf",
     "fontSize-root": 14,
     "fontSize-h1": 28,
     "fontSize-h2": 25,

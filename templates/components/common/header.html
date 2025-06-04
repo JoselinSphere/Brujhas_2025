@@ -30,11 +30,12 @@
                 {{/if}}
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 header-social-icons">
-                {{#if theme_settings.social_icon_placement_top}}
+                <!-- Sphere: 04/06/2025 eliminar iconos de redes en el header -->
+                <!-- {{#if theme_settings.social_icon_placement_top}}
                     <div class="navUser-item navUser-item--social">
                         {{> components/common/social-links}}
                     </div>
-                {{/if}}
+                {{/if}} -->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 head-icons">
                 {{> components/common/navigation}}
@@ -50,8 +51,9 @@
             <div class="row">
                 <div class="col-2 head-contact">
                     {{#if settings.phone_number}}
+                    <!-- Sphere: 04/06/2025 eliminar número de whatsApp en el header -->
                         <!--<strong class="foot-phone"><span><svg width="20px" height="18px"><use xlink:href="#call-icon"></use></svg></span>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>-->
-                        <strong class="foot-phone"><span><svg width="20px" height="18px"><use xlink:href="#call-icon"></use></svg></span>  <a href="https://api.whatsapp.com/send?phone=51924886303&amp;text=Bienvenida%20a%20BRUJHA%27S.%20%C2%BFC%C3%B3mo%20podemos%20ayudarte%20hoy%3F&amp;_kx=">+51 924 886 303</a></strong>
+                        <!-- <strong class="foot-phone"><span><svg width="20px" height="18px"><use xlink:href="#call-icon"></use></svg></span>  <a href="https://api.whatsapp.com/send?phone=51924886303&amp;text=Bienvenida%20a%20BRUJHA%27S.%20%C2%BFC%C3%B3mo%20podemos%20ayudarte%20hoy%3F&amp;_kx=">+51 924 886 303</a></strong> -->
                     {{/if}}
                 </div>
                 <div class="col-8 cate-navlg">
@@ -68,6 +70,7 @@
     </div>
 </header>
 {{#if theme_settings.homepage_announcement_bar_show}}
+<!-- Sphere: 04/06/2025 eliminar barra de anuncios en el header banner negro -->
     <!-- <div class="top-bar" id="header_banner">
         <button id="closeButton"><span>X</span></button> 
       <div class="container section-gap announcementbar" >

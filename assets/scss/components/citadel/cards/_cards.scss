@@ -16,6 +16,39 @@
     width: 100%;
     justify-content: space-evenly;
 }
+// agregamos divicion del div titulo y icono 80-20
+.title-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-rating .card-title {
+    flex: 0 0 80%;
+    margin: 0;
+}
+
+.title-rating .card-rating {
+    flex: 0 0 20%;
+    text-align: right;
+}
+
+// JRivas Estilos para las etiqueta de Nuevo en el card
+.product-label--new {
+    background-color: #032346; 
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.rating--small{
+    display: none;
+}
 .card-product-swatch{
     display: block;
     width: 50%;
@@ -310,24 +343,21 @@
         transition: all 0.1s ease;
     }
 }
+// Sphere: cambio de color de fondo del icono del whish en desktop
 .card-figcaption-button:hover {
-    background-color: stencilColor("product-button-backgroundColorHover");
+    background-color: white; //("product-button-backgroundColorHover");
     
 }
 .card-figcaption-button:hover svg {
-    fill: stencilColor("product-button--primary-colorHover"); 
+    fill: black; //("product-button--primary-colorHover"); 
 }
 .card-body .listdes{
     display: none;
 }
 .card-body {
     text-align: left;
-    padding: 10px 0px 0px 0px;
+    padding: 10px 0px 0px 0px; 
     border-radius: 0px;
-
-    @include breakpoint("small") {
-        
-    }
 }
 
 .slick-slide div:last-child .productCarousel-slide {
@@ -426,6 +456,7 @@
 @media(max-width: 991px){ 
     .card-title > a{
         font-size: 16px;
+        padding: 7px 20px 10px 10px;
     }
     .card-figcaption-button{
         background-color: stencilColor("color-primary-background");
@@ -468,6 +499,10 @@
     }
 }
 @media(max-width: 800px){
+    .card-text.myprice {
+        padding-left: 5px; 
+
+    }
     .card-figcaption-button{
         background-color: stencilColor("secondary-background-color");
         padding: 8px;
@@ -553,6 +588,11 @@
     }
 }
 @media(max-width: 768px){
+    .card-body {
+        padding-top: 0px;
+        //padding-left: 7px;
+    //padding: 0px 0px 0px 10px; // se aumenta el padding
+}
     .countdown-amount{
         font-size: 20px !important;
         padding: 6px 18px !important;
@@ -561,6 +601,9 @@
     // .productGrid .card-img-container img{
     //     height: 350px;
     // }
+    .wishlist{
+        display: block;
+    }
 }
 @media(max-width: 600px){
     .featured-caption .card-rating{
@@ -676,3 +719,86 @@
     }
     
 }
+
+
+.title-rating.desktop-only {
+    display: flex;
+}
+.mobile-title-block.mobile-only {
+    display: none;
+    padding: 0px 0;
+    flex-direction: column;
+    margin-right: 5px;
+}
+@media(max-width: 768px) {
+    .title-rating.desktop-only {
+        display: none !important;
+    }
+    .mobile-title-block.mobile-only {
+        display: flex !important;
+    }
+    .quickview{
+        display: none;
+    }
+    .add-cart {
+        display: none;
+    }
+    .show-mobilecard{
+        display: block;
+    }
+}
+
+.mobile-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 0px;
+    gap: 1px;
+}
+
+// boton de compra en verion mobile
+.btn-comprar {
+    flex: 1;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 7px 42px;
+    border: none;
+    height: 30px;
+    text-decoration: none;
+}
+
+// boton de corazon en version mobile en el card 
+.wishlist-btn {
+    width: 44px;
+    height: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: #000;
+    // color: #fff;
+    // border: 1px solid #070707;
+    // fill: stencilColor("product-button--primary-colorHover");
+    padding: 8px;
+}
+
+.wishlist-btn svg {
+    width: 20px;
+    height: 20px;
+    //stroke: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,7 @@
 </a>
 <div class="navPage-subMenu" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
     <ul class="navPage-subMenu-list">
+        <!-- Eliminar vista de todas las subcategoria -->
         <!-- <li class="navPage-subMenu-item">
             <a class="navPage-subMenu-action navPages-action"
                href="{{url}}"
@@ -19,9 +20,9 @@
             </a>
         </li> -->
         {{#each children}}
-            <li class="navPage-subMenu-item">
+            <li class="navPage-subMenu-item submenu-column">
                 {{#if children}}
-                    <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
+                    <a class="navPage-subMenu-action navPages-action has-subMenu navPage-categoria{{#if is_active}} activePage{{/if}}"
                        href="{{url}}"
                        aria-label="{{name}}"
                     >
@@ -39,7 +40,7 @@
                     </a>
                     <ul class="navPage-childList" id="navPages-{{id}}">
                         {{#each children}}
-                        <li class="navPage-childList-item">
+                        <li class="navPage-childList-item navPage-letras">
                             <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
                                href="{{url}}"
                                aria-label="{{name}}"
@@ -57,6 +58,7 @@
                         {{name}}
                     </a>
                 {{/if}}
+                <!-- Sphere: Eliminar vista de las imagenes de las subcategoria -->
                 <!-- <img src="{{getImage image}}" class="img-fluid"> -->
             </li>
         {{/each}}

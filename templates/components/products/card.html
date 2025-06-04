@@ -28,28 +28,44 @@ attr-cards-ids="{{id}}"
         {{lang 'common.login_for_pricing'}}
     {{/or}}"
 {{/if}}>
-    {{#or price.sale_price_with_tax.value price.sale_price_without_tax.value}}
-            {{#if theme_settings.product_sale_badges '===' 'sash'}}
-                <div class="sale-flag-sash">
-                    <span class="sale-text">{{{theme_settings.pdp_sale_badge_label}}}</span>
+        {{#or price.sale_price_with_tax.value price.sale_price_without_tax.value}}
+        <!-- ICONO DE OFERTA MODIFICADO PARA QUE MUESTRE EL % DESCUENTO-->
+        {{#if theme_settings.product_sale_badges '===' 'sash'}}
+            <div class="sale-flag-sash">
+                <span class="sale-text discount-percentage"
+                    data-product-id="{{id}}"
+                    data-non-sale-price="{{price.non_sale_price_with_tax.value}}"
+                    data-sale-price="{{price.with_tax.value}}">
+                </span>
+                
+            </div>
+        {{else if theme_settings.product_sale_badges '===' 'topleft'}}
+            <div class="sale-flag-side">
+                <span class="sale-text discount-percentage"
+                      data-product-id="{{id}}"
+                      data-non-sale-price="{{price.non_sale_price_with_tax.value}}"
+                      data-sale-price="{{price.sale_price_with_tax.value}}">
+                      {{lang 'products.on_sale'}}
+                </span>
+            </div>
+        {{else if theme_settings.product_sale_badges '===' 'burst'}}
+            <div class="starwrap">
+                <div class="sale-text-burst discount-percentage"
+                     data-product-id="{{id}}"
+                     data-non-sale-price="{{price.non_sale_price_with_tax.value}}"
+                     data-sale-price="{{price.sale_price_with_tax.value}}">
+                     {{lang 'products.on_sale'}}
                 </div>
-            {{else if theme_settings.product_sale_badges '===' 'topleft'}}
-                <div class="sale-flag-side">
-                    <span class="sale-text">{{{theme_settings.pdp_sale_badge_label}}}</span>
-                </div>
-            {{else if theme_settings.product_sale_badges '===' 'burst'}}
-                <div class="starwrap">
-                    <div class="sale-text-burst">{{{theme_settings.pdp_sale_badge_label}}}</div>
-                    <div class="sale-flag-star"></div>
-                </div>
-            {{/if}} 
-            
+                <div class="sale-flag-star"></div>
+            </div>
+        {{/if}}   
         {{/or}}
+
         {{#if out_of_stock_message }}
             {{#if theme_settings.pdp_sold_out_label}}
             {{#if theme_settings.product_sale_badges '===' 'sash'}}
                 <div class="sold-out-flag-sash sold_out">
-                    <span class="sale-text">{{{theme_settings.pdp_sold_out_label}}}</span>
+                    <span class="sale-text">{{{theme_settings.pdp_sold_out_label}}}</span>                    
                 </div>
             {{else if theme_settings.product_sale_badges '===' 'topleft'}}
                 <div class="sold-out-side sold_out">
@@ -63,6 +79,7 @@ attr-cards-ids="{{id}}"
             {{/if}} 
         {{/if}}
         {{/if}}
+
     <figure class="card-figure featured-imag">
         <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
             <div class="card-img-container">
@@ -81,6 +98,7 @@ attr-cards-ids="{{id}}"
             {{/each}}
         </a>
     </figure>
+
     {{#if theme_settings.theme_fashion}}
     <div class="card-body">
         {{#if theme_settings.brand_name}}
@@ -89,7 +107,8 @@ attr-cards-ids="{{id}}"
             {{/if}}
         {{/if}}
 
-        <div class="title-rating">
+
+        <div class="title-rating desktop-only">
             <h3 class="card-title">
                 <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>{{name}}</a>
             </h3>
@@ -97,8 +116,53 @@ attr-cards-ids="{{id}}"
                 <span class="rating--small">
                     {{> components/products/ratings rating=rating}}
                 </span>
+                {{#if settings.show_wishlist}}
+                    <button href="/wishlist.php?action=add&product_id={{id}}" aria-label="wishlist" class="wishlist button{{#if theme_settings.show_product_wishlist_mb}} show-mobile{{/if}} card-figcaption-button">
+                        <svg class="icon"><use xlink:href="#hwishlist"/></svg>
+                    </button>
+                {{/if}}
             </div>
         </div>
+         <!-- Visible solo en mobile -->
+          
+    <div class="mobile-title-block mobile-only">
+        <div class="mobile-buttons-container">
+            <!-- Botón Add to Cart -->
+            <div class="add-cart show-mobilecard ">
+                {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                    {{#if show_cart_action}}
+                        {{#if has_options}}
+                            <a href="{{url}}" class="btn-comprar" data-product-id="{{id}}">
+                                Comprar
+                                <!-- <svg width="16px" height="16px"><use xlink:href="#pro-hcart"></use></svg> -->
+                            </a>
+                        {{/if}}
+                        {{#if add_to_cart_url}}
+                            <a href="{{add_to_cart_url}}" class="btn-comprar">
+                                Comprar
+                                <!-- <svg width="16px" height="16px"><use xlink:href="#pro-hcart"></use></svg> -->
+                            </a>
+                        {{/if}}
+                    {{/if}}
+                {{/or}}
+            </div>
+            <!-- Botón Wishlist -->
+            {{#if settings.show_wishlist}}
+                <button href="/wishlist.php?action=add&product_id={{id}}" class="wishlist-btn show-mobilecard">
+                    <svg class="icon"><use xlink:href="#hwishlist"/></svg>
+                </button>
+            {{/if}}
+        </div>
+        
+        <h3 class="card-title">
+            <a href="{{url}}">{{name}}</a>
+        </h3>
+
+        <!-- Contenedor para los botones (en columna) -->
+        
+    </div>
+        
+
         {{#if summary}}
             <div class="listdes">{{{last (split summary '[/shortcode]')}}}</div>
         {{/if}}
@@ -113,10 +177,12 @@ attr-cards-ids="{{id}}"
             </div>
             {{#if theme_settings.show_card_swatch}}<div class="card-product-swatch"></div>{{/if}}
         </div>
+        
 
         {{> components/products/bulk-discount-rates}}
         <figcaption class="card-figcaption">
             <div class="card-figcaption-body">
+               
                 <!-- quick view icon -->
                 {{#unless hide_product_quick_view}}
                 {{#if theme_settings.show_product_quick_view}}
@@ -127,12 +193,14 @@ attr-cards-ids="{{id}}"
                 {{/if}}
                 {{/if}}
                 {{/unless}}
-                <!-- compare icon -->
+                 <!-- Remover iconos JRivas 05/06/2025 -->
+               <!-- compare icon
                 {{#if show_compare}}
                     <label class="button button--small card-figcaption-button bcom compare compare-{{id}}" for="compare-{{id}}" title="{{lang 'products.compare'}}">
                         <svg width="16px" height="16px"> <use xlink:href="#compareicon"></use></svg><input class="wb-compare" type="checkbox" name="products[]" value="{{id}}" data-compare-id="{{id}}" id="compare-{{id}}">
                     </label>
-                {{/if}}
+                {{/if}} -->
+
                 <!-- add to cart icon -->
                 <div class="add-cart">
                     {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
@@ -152,17 +220,29 @@ attr-cards-ids="{{id}}"
                         {{/if}}
                     {{/or}}
                 </div>
-
+                 <!-- Remover iconos JRivas 05/06/2025 -->
                 <!-- wishlist icon -->
-                {{#if settings.show_wishlist}}
+                <!-- {{#if settings.show_wishlist}}
                     <button href="/wishlist.php?action=add&product_id={{id}}" aria-label="wishlist" class="wishlist button{{#if theme_settings.show_product_wishlist_mb}} show-mobile{{/if}} card-figcaption-button">
                         <svg class="icon"><use xlink:href="#hwishlist"/></svg>
                         <span class="text">{{lang 'account.wishlists.add'}}</span> 
                     </button>
-                {{/if}}
+                {{/if}} -->
                 
             </div>
         </figcaption> 
+    </div>
+    <!-- JRivas Agregar etiqueta de nuevo abajo en el card -->
+    <div class="etiquetaNuevo">
+        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+        {{#if show_cart_action}}
+        {{#if has_options}}
+                <span class="product-label product-label--new">
+                    Nuevo
+                </span>
+            {{/if}}
+        {{/if}}
+        {{/or}}
     </div>
     {{else}} 
     {{#if theme_settings.theme_automotive}}
@@ -310,7 +390,6 @@ attr-cards-ids="{{id}}"
                     </button>
                 {{/if}}
             </div> 
-            
         </figcaption> 
         <figcaption class="card-figcaption card-figcaption-cart">
             <div class="card-figcaption-body figcaption-cart"> 

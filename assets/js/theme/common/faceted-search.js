@@ -6,6 +6,7 @@ import modalFactory from '../global/modal';
 import collapsibleFactory from './collapsible';
 import { Validators } from './utils/form-utils';
 import nod from './nod';
+import updateDiscountPercentages from '../global/descuento_etiqueta';
 
 
 const defaultOptions = {
@@ -103,6 +104,12 @@ class FacetedSearch {
     refreshView(content) {
         if (content) {
             this.callback(content);
+        }
+        
+        // // Ejecutar el cálculo de descuentos
+        if (typeof updateDiscountPercentages === 'function') {
+            updateDiscountPercentages();
+            console.log('[%] Descuentos actualizados desde refreshView');
         }
 
         // Init collapsibles

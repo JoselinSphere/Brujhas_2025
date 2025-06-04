@@ -13,8 +13,9 @@
         <div class="homecategory row cate-row pre-row">
             <div class="all-cate caro-btn topsp col-12 pre-col all-head-contant">
                 <div class="homecate">
+                    
                     <section class="productCarousel" data-list-name="{{list}}" data-slick='{
-                            "infinite": false,
+                            "infinite": true,
                             "mobileFirst": true,
                             "dots": false,
                             "slidesToShow": 5,
@@ -51,7 +52,7 @@
                                     }
                                 },
                                 {
-                                    "breakpoint": 575,
+                                    "breakpoint": 560,
                                     "settings": {
                                         "slidesToShow": 2,
                                         "slidesToScroll": 1
@@ -67,7 +68,7 @@
                                 {
                                     "breakpoint": 0,
                                     "settings": {
-                                        "slidesToShow": 2,
+                                        "slidesToShow": 1,
                                         "slidesToScroll": 1
                                     }
                                 }
@@ -76,18 +77,31 @@
                         {{#each categories }}
                         <!-- <div class="home-cate-item col-12 pre-col"> -->
                         <div class="col-12 col-sm-6 col-md-3 mb-4">
-                            <div class="cate-img">
-                                <a href="{{url}}">
-                                    <img src="{{getImage image}}" alt="{{name}}">
-                                    <div class="cate-ti-overlay">
-                                        <span class="catename">{{name}}</span>
-                                        <a href="{{url}}" class="cate-btn">VER TODO</a>
-                                    </div>
-                                </a>
+                        <div class="cate-img">
+                            <a href="{{url}}">
+                            <img src="{{getImage image}}" alt="{{name}}">
+                            <div class="cate-ti-overlay">
+                                <span class="catename">{{name}}</span>
+                                <a href="{{url}}" class="cate-btn cate-btn-desktop-only">VER TODO</a>
                             </div>
+                            </a>
+                        </div>
                         </div>
                         {{/each}}
                     </section>
+                    <!-- Flecha izquierda MOBILE--> 
+                    <span class="mobile-slide-arrow left-arrow">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 6l-6 6 6 6" fill="none" stroke="black" stroke-width="2"/>
+                    </svg>
+                    </span>
+
+                    <!-- Flecha derecha MOBILE-->
+                    <span class="mobile-slide-arrow right-arrow">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 6l6 6-6 6" fill="none" stroke="black" stroke-width="2"/>
+                    </svg>
+                    </span>
                 </div>
             </div>
         </div>

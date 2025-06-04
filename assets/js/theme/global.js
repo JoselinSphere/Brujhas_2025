@@ -15,6 +15,7 @@ import carousel from './common/carousel';
 import svgInjector from './global/svg-injector';
 import productOptionGraphql from './set-product-option-with-graphql';
 import customJS from './custom';
+import updateDiscountPercentages from './global/descuento_etiqueta';
 
 export default class Global extends PageManager {
     onReady() {
@@ -35,5 +36,7 @@ export default class Global extends PageManager {
         if(show_card_swatch){
             productOptionGraphql(this.context);
         }
+    // Ejecutar el cálculo de descuentos
+        updateDiscountPercentages();
     }
 }

@@ -108,7 +108,7 @@
 	text-overflow: ellipsis;
 	text-transform: none;
 	padding-bottom: 1px;
-    padding-left: 25px;
+    padding-left: 15px;
     margin-right: 7px;
 	white-space: normal;
 	font-size: 14px;
@@ -304,6 +304,9 @@
 // Sphere 2025/02/24
 
   @media (max-width: 700px) {
+    .category-title {
+        text-align: center;
+    }
     // Ocultar categorias en mobile
     // .category-container.container .row.category-content.align-items-start {
     //   display: none;
@@ -315,6 +318,14 @@
     // Ajustar margen de categorias en mobile
     .category-container.container {
       margin-bottom: 16px;
+      padding-left: 7%;
+      //margin-left: 3.5%;
+    }
+    // Se agrega en mobile el texto de las cads 
+    .card-title > a {
+
+        padding-left: 0px;
+        font-size: 14px;
     }
   }
 

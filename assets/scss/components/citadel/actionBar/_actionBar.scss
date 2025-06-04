@@ -11,6 +11,8 @@
         background-color: $input-bg-color;
         border: 1px solid #eeeeee;
         border-radius: 8px;
+        margin: 0 10px;
+        
 
         &:hover {
             border-color: stencilColor("input-border-color-active");
