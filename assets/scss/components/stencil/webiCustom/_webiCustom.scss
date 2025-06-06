@@ -213,7 +213,7 @@ input:focus{
 }
 .section-spacing{
     // padding-top: 80px; // Sphere
-    padding-top: 30px;
+    padding-top: 0px;
 }
 
 .section-spacing .banner {
@@ -2713,8 +2713,8 @@ svg{
         padding-top: 14px;
     }
     .section-spacing{
-        // padding-top: 60px; // Sphere
-        padding-top: 30px;
+        // padding-top: 60px; // Sphere: espacio entre el titulo y contenedor de categorias
+        padding-top: 0px;
     }
     .section-spacing .banner {
         display: flex;
@@ -3061,7 +3061,7 @@ svg{
         padding: 30px 0px;
     }
     .section-spacing{
-        padding-top: 30px;
+        padding-top: 0px;
     }
     .section-spacing .banner {
         display: flex;
