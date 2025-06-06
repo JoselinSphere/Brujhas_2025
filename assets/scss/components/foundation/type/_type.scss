@@ -9,6 +9,7 @@
 body {
     font-size: $body-fontSize;
     font-weight: $body-font-weight;
+    font-family: 'AvenirNextLTPro-regular';
 }
 
 h1,
@@ -17,6 +18,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: 'AvenirNextLTPro-regular'; 
     font-weight: $header-font-weight;
     margin-top: $heading-marginTop;
 }
@@ -43,11 +45,13 @@ cite {
     margin: 30px 0px;
     text-align: center;
     font-size: 34px;
-    color: stencilColor("color-textBase");
+    color: black; //stencilColor("color-textBase");
     text-transform: uppercase;
     font-weight: normal;
+    font-family: 'AvenirNextLTPro-regular'; 
     p {
         text-transform: none;
+        color: black;
     }
 }
 .myheadeing{
@@ -55,7 +59,7 @@ cite {
 }
 .myheadeing p{
     font-size: 14px;
-    color: stencilColor("color-primaryDark");
+    color: black; //stencilColor("color-primaryDark");
     font-weight: normal;
     margin: 0;
 }

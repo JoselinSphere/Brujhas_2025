@@ -206,16 +206,24 @@ attr-cards-ids="{{id}}"
                     {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
                         {{#if show_cart_action}}
                             {{#if has_options}}
-                                <a href="{{url}}" data-event-type="product-click" title="{{lang 'products.choose_options'}}" class="button button--small card-figcaption-button myadcart" data-product-id="{{id}}"><svg width="16px" height="16px"><use xlink:href="#pro-hcart"></use></svg><span class="cart-text">{{lang 'elegir opción'}}</span></a>
+                                <a href="{{url}}" data-event-type="product-click" title="{{lang 'products.choose_options'}}" class="button button--small card-figcaption-button myadcart" data-product-id="{{id}}">
+                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="16" height="16">
+                                    <span class="cart-text">{{lang 'elegir opción'}}</span></a>
                             {{/if}}
                             {{#if pre_order}}
-                                <a href="{{pre_order_add_to_cart_url}}" title="{{lang 'products.pre_order'}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart"><svg width="16px" height="16px"><use xlink:href="#pro-hcart"></use></svg><span class="cart-text">{{lang 'pedido anticipado'}}</span></a>
+                                <a href="{{pre_order_add_to_cart_url}}" title="{{lang 'products.pre_order'}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart">
+                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="16" height="16">
+                                    <span class="cart-text">{{lang 'pedido anticipado'}}</span></a>
                             {{/if}}
                             {{#if add_to_cart_url }}
-                                <a href="{{add_to_cart_url}}" title="{{lang 'products.add_to_cart'}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart"><svg width="16px" height="16px"><use xlink:href="#pro-hcart"></use></svg><span class="cart-text">{{lang 'añadir al carrito'}}</span></a>
+                                <a href="{{add_to_cart_url}}" title="{{lang 'products.add_to_cart'}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart">
+                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="16" height="16">
+                                    <span class="cart-text">{{lang 'añadir al carrito'}}</span></a>
                             {{/if}}
                             {{#if out_of_stock_message }}
-                                <a href="{{url}}" title="{{out_of_stock_message}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart" data-product-id="{{id}}"><svg width="16px" height="16px"><use xlink:href="#pro-hcart"></use></svg><span class="cart-text">{{lang 'agotado'}}</span></a>
+                                <a href="{{url}}" title="{{out_of_stock_message}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart" data-product-id="{{id}}">
+                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="16" height="16">
+                                    <span class="cart-text">{{lang 'agotado'}}</span></a>
                             {{/if}}
                         {{/if}}
                     {{/or}}

@@ -1,4 +1,9 @@
-
+@font-face {
+    font-family: 'AvenirNextLTPro-regular';
+    src: url('/assets/custom/fonts/Avenir-next-lt-pro/AvenirNextLTPro-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 input:focus+label {
     outline: none !important;
 }
@@ -859,6 +864,8 @@ input:focus{
     }
     .top-bar-f a {
         font-size: 14px;
+        font-family: 'AvenirNextLTPro-regular', sans-serif;
+
     }
     .theme_art .features-img-descri {
         top: 30%;

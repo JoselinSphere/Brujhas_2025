@@ -496,6 +496,8 @@
 
         @include breakpoint("medium") {
             padding: 0!important;
+            font-size: 12px;
+            font-family: 'AvenirNextLTPro-demi';
         }
     }
 

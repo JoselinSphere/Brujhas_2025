@@ -46,7 +46,7 @@ dl, ol, ul{
         font-size: 12px !important;
         font-family: 'AvenirNextLTPro-demi' !important;
         color: #000000;
-        font-weight: 100;
+        font-weight: 800;
     }
 // sub-menu - Subcategorias
     .navPage-letras a{
@@ -632,8 +632,8 @@ input:focus{
 
 @media(min-width:801px){
     .navPage-subMenu-item > .navPage-subMenu-action {
-        color: stencilColor("main-color");
-        font-weight:normal;
+        color: black; //stencilColor("main-color");
+        //font-weight:normal;
         border-bottom:none;
         text-transform: uppercase;
         margin-bottom: 10px !important;
@@ -982,10 +982,7 @@ svg{
     margin: 0 auto;
     bottom: 0px;
 }
-.cate-img{
-    position: relative;
-    // display: block;
-}
+
 //JR
 .cate-ti-overlay {
     position: absolute;
@@ -1027,11 +1024,19 @@ svg{
 //     background-color: rgba(102, 101, 101, 0.9);
 //     color: rgb(252, 252, 252);
 // }
+
+// Sphere: imagenes de la categoria no esten estiradas 
+.cate-img {
+    height: 430px;
+    overflow: hidden;
+    position: relative;
+}
+
 .cate-img img {
-    display: block;
     width: 100%;
-    height: auto;
-    transition: all 0.3s ease;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .cate-img:hover img {
@@ -1096,6 +1101,7 @@ svg{
 }
 .service{
     text-align: center;
+    font-family: 'AvenirNextLTPro-regular';
 }
 .deliveryinfo h1{
     font-size: 18px;
@@ -2316,6 +2322,7 @@ svg{
     }
     .navPages-action {
         padding: 21px 18px !important;
+        font-family: 'AvenirNextLTPro-demi';
     }
     .navUser-item.head-ser {
         max-width: 275px;
@@ -2331,8 +2338,11 @@ svg{
     .navPages-action {
         padding: 21px 15px;
     }
+    //Sphere: cambio de tipo de letra al nav principal
     .navPages-item .navPages-action {
         padding: 21px 12px!important;
+        font-family: 'AvenirNextLTPro-regular' !important;
+        color: #000;
     }
     .off-img-second-col .features-img-descri h1{
         font-size: 38px;
@@ -2876,12 +2886,13 @@ svg{
         right: 15px;
         width: auto;
     }
+    // cambiar color del menu en mobile
     .navPages-action,.navPages-item{
-        color: #000000 !important;
+        color: #070707 !important;
     }
     .navPages-action svg{
-        fill: #fff !important;
-        stroke: #000000 !important;
+        fill: #ffffff !important;
+        stroke: #ffffff !important;
     }
     .navPages{
         background-color: transparent !important;
@@ -2921,13 +2932,14 @@ svg{
         padding: 0;
     }
     .footer-info-heading {
-        font-size: 14px;
+        font-size: 18px;
         font-weight: normal;
         margin: 12px 0;
     }
     .cate-ti div{
         transform: translate(0%, 35%);
     }
+
 }
 @media(max-width: 767px){
     .video-content{
@@ -3042,6 +3054,9 @@ svg{
     }
 }
 @media(max-width: 600px){
+    .cate-img {
+    height: 550px;
+}
     .parallax-bg{
         padding: 30px 0px;
     }

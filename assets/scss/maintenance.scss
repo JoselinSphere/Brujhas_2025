@@ -15,7 +15,7 @@ body {
     display: flex;
     -ms-flex-align: center;
     -ms-flex-pack: space-around;
-    font-family: Helvetica, Arial, Sans-Serif;
+    font-family: 'AvenirNextLTPro-regular', Arial, Sans-Serif;
     font-size: 0.8em;
     height: 100vh;
 
@@ -148,6 +148,7 @@ div p {
 @media screen and (min-width: 540px) {
     body {
         font-size: 1em;
+        font-family: 'AvenirNextLTPro-regular';
     }
 
     main {

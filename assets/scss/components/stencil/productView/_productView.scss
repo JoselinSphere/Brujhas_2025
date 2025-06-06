@@ -405,7 +405,7 @@
     width: 35%;
 
     @include breakpoint("small") {
-        font-family: fontFamily("headingSans");
+        font-family: 'AvenirNextLTPro-regular';
         font-size: fontSize("smallest");
         
     }
@@ -457,6 +457,7 @@
                 font-weight: normal;
                 font-size: 14px;
                 color: stencilColor("color-textBase");
+                font-family: 'AvenirNextLTPro-regular';
             }
         }
     }
@@ -486,6 +487,7 @@
                     font-weight: normal;
                     font-size: 14px;
                     color: stencilColor("color-textBase");
+                    font-family: 'AvenirNextLTPro-regular';
                 }
             }
         }

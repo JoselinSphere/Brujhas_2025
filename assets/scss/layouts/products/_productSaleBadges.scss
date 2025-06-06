@@ -159,6 +159,7 @@
 .sale-flag-sash {
     @extend %base-flag-sash;
     @include setFlagColors("color_badge_product_sale_badges", "color_text_product_sale_badges");
+    font-family: 'AvenirNextLTPro-regular';
 }
 
 .sold-out-flag-sash {

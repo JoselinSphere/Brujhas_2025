@@ -251,6 +251,7 @@
     letter-spacing: 0;
     color: stencilColor("footer-textColor");
     font-weight: normal;
+    font-family: 'AvenirNextLTPro-regular';
 }
 .foot-social .socialLinks .socialLinks-item{
     margin-left: 0rem;
@@ -268,7 +269,7 @@
 }
 .footer-info-heading {
     color: stencilColor("footer-textColor");
-    font-size: 24px;
+    font-size: 18px;
     text-transform: uppercase;
     margin: 0px 0 25px;
     font-weight: normal;
@@ -283,6 +284,7 @@
     letter-spacing: 0;
     font-weight: normal;
     margin-bottom: 0;
+    font-family: 'AvenirNextLTPro-regular';
 }
 .footer-nav{
     padding: 60px 0 0 0;
@@ -293,6 +295,7 @@
     font-size: 24px;
     text-transform: none;
     width: 50%;
+    font-family: 'AvenirNextLTPro-regular';
 }
 .webi-subscribe .form-prefixPostfix .button {
     right: 0;
@@ -616,7 +619,7 @@ ul.list-line li {
         width: 100px;
     }
     .foot-about p,.footer-info-list a,footer address,.foot-phone,.footer-copyright > .powered-by{
-        font-size: 14px;
+        font-size: 12px;
     }
     .footer-info-heading{
         font-size: 18px;
@@ -706,6 +709,7 @@ ul.list-line li {
         padding: 0 !important;
         margin: 0 !important;
         overflow: unset !important;
+        font-family: 'AvenirNextLTPro-regular';
     }
     .collapse-icon{
         display: none;
@@ -776,7 +780,7 @@ ul.list-line li {
         padding-right: 0px;
     }
     .footer-nav{
-        padding: 20px 0 0 0;
+        padding: 60px 0 0 0;
     }
     .newslatter-footer{
         padding: 30px 0px 30px 0px;

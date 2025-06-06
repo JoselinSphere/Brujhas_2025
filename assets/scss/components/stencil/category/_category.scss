@@ -227,7 +227,7 @@
     padding: 0.5rem 0;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .subcategory-pill {
@@ -242,6 +242,7 @@
     font-weight: 500;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.425); 
+    font-family: 'AvenirNextLTPro-regular';
 }
 
 .subcategory-pill:hover {
