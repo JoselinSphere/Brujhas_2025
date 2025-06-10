@@ -748,42 +748,77 @@
     }
 }
 
+// .mobile-buttons-container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-top: 10px;
+//     padding-left: 0px;
+//     gap: 1px;
+// }
+
+// boton de compra en verion mobile
+// .btn-comprar {
+//     flex: 1;
+//     background-color: #000;
+//     color: #fff;
+//     font-size: 14px;
+//     text-align: center;
+//     padding: 13% 82%;
+//     border: none;
+//     height: 30px;
+//     text-decoration: none;
+// }
+
+// boton de corazon en version mobile en el card 
+// .wishlist-btn {
+//     //width: 44px;
+//     height: 10px;
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     // background-color: #000;
+//     // color: #fff;
+//     // border: 1px solid #070707;
+//     // fill: stencilColor("product-button--primary-colorHover");
+//     //padding: 8px;
+// }
 .mobile-buttons-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 5px;
     padding-left: 0px;
-    gap: 1px;
+    gap: 0px; 
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
 }
 
-// boton de compra en verion mobile
+/* Botón Comprar - ocupa 75% */
 .btn-comprar {
-    flex: 1;
+    flex: 0 0 75%; 
     background-color: #000;
     color: #fff;
     font-size: 14px;
     text-align: center;
-    padding: 7px 42px;
+    padding: 10px 40px; 
     border: none;
-    height: 30px;
+    height: 30px; 
     text-decoration: none;
-}
-
-// boton de corazon en version mobile en el card 
-.wishlist-btn {
-    width: 44px;
-    height: 10px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    // background-color: #000;
-    // color: #fff;
-    // border: 1px solid #070707;
-    // fill: stencilColor("product-button--primary-colorHover");
-    padding: 8px;
 }
 
+/* Botón Wishlist - ocupa 25% */
+.wishlist-btn {
+    flex: 0 0 25%; 
+    height: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* Fondo claro para contraste */
+    padding: 0; /* Elimina padding interno */
+}
 .wishlist-btn svg {
     width: 20px;
     height: 20px;

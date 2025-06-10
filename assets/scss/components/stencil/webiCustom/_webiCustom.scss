@@ -1,11 +1,3 @@
-@font-face {
-    font-family: 'AvenirNextLTPro-regular';
-    src: url('/assets/custom/fonts/Avenir-next-lt-pro/AvenirNextLTPro-Regular.otf') format('opentype');
-}
-@font-face {
-    font-family: 'AvenirNextLTPro-demi';
-    src: url('/assets/custom/fonts/Avenir-next-lt-pro/AvenirNextLTPro-Demi.otf') format('opentype');
-}
 body{
     color: #000;
     font-size: 14px;
@@ -51,7 +43,7 @@ dl, ol, ul{
 // sub-menu - Subcategorias
     .navPage-letras a{
         font-family: 'AvenirNextLTPro-regular' !important;
-        font-size: 10px !important;
+        font-size: 14px !important;
         color: #000000;
         
     } 
@@ -2503,8 +2495,6 @@ svg{
     .navPages-action {
         font-size: 14px !important;
         text-transform: none !important;
-    }
-    .navPages-action {
         padding: 18px 5px !important;
     }
     .head-logo{
@@ -2886,9 +2876,9 @@ svg{
         right: 15px;
         width: auto;
     }
-    // cambiar color del menu en mobile
+    // cambiar color del menu en mobile 
     .navPages-action,.navPages-item{
-        color: #070707 !important;
+        color: #ffffff !important;
     }
     .navPages-action svg{
         fill: #ffffff !important;
