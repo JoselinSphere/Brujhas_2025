@@ -378,6 +378,9 @@ div.slick-slider {
 }
 
 @media(max-width: 991px){
+    .ocultar-movil{
+        display: none;
+    }
     .slick-next,
 .slick-prev{
     opacity: 1 !important;
@@ -407,7 +410,7 @@ div.slick-slider {
     .all-btn {
         position: relative;
         top: 0px;
-        margin-top: 30px;
+        //margin-top: 30px;
     }
     .slick-dotted.slick-slider {
         margin-bottom: 0px;
@@ -421,8 +424,8 @@ div.slick-slider {
     } 
 
 }
-@media(max-width: 800px){
-    .all-btn{
-        margin-top: 20px;
-    }
-}
+// @media(max-width: 800px){
+//     .all-btn{
+//         margin-top: 20px;
+//     }
+// }
