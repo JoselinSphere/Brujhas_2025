@@ -588,6 +588,8 @@
         top: 54px;
     }
 }
+
+
 @media(min-width: 800px){
     .cate-navlg{
         position: unset;
@@ -645,4 +647,53 @@
         right: 0;
         left: auto;
     }
+
+    // Sphere: Cambio del menu en mobile de negro a blanco
+    .navPages-container.is-open {
+    position: fixed !important;
+    top: 73px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff !important;
+    z-index: 9999 !important;
+    overflow-y: auto !important;
+    border-radius: 0 !important;
+    padding: 1.5rem;
+  }
+
+  /* Asegura que el fondo no se vea debajo del menú */
+  body.has-activeNavPages .main,
+  body.has-activeNavPages .heroBanner,
+  body.has-activeNavPages .page-content,
+  body.has-activeNavPages .footer,
+  body.has-activeNavPages .productGrid {
+    display: none !important;
+  }
+
+  .navPages-action {
+    color: #050505 !important;
+    font-size: 18px !important;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .navPages-action svg {
+    fill: #000 !important;
+    stroke: #000 !important;
+  }
+  .navPages-list > .navPages-item {
+    border-bottom: 1px solid #e0e0e0; 
+    padding: 10px 0;
+
+    &:last-child {
+      border-bottom: none; 
+    }
+  }
 }
+
