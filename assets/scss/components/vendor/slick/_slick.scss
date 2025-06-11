@@ -385,7 +385,7 @@ div.slick-slider {
     padding:  11px;
     margin: 0px 5px;
     text-align: center;
-    display: inline-block;
+    display: none;//inline-block;  //Sphere: ocultar el boton en version Mobile  
     width: 100%;//2.28571rem;
     //height: 2.28571rem;
     transform: none;

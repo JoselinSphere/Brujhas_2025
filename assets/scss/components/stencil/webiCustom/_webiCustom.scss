@@ -994,8 +994,8 @@ svg{
 .cate-ti-overlay .catename {
     color: stencilColor("color-textBase"); //rgb(59, 58, 58);
     //font-size: 2em; // Aumentado desde 1.2em
-    font-size: 1.8em; 
-    font-weight: 500;
+    font-size: 1.6em; 
+    //font-weight: 500;
     text-transform: uppercase; 
     letter-spacing: 2px;  
     // font-weight: bold;
@@ -1003,9 +1003,9 @@ svg{
     text-decoration: none;
     color: rgb(250, 249, 249);
     // background-color: rgba(192, 190, 190, 0.404);
-    padding: 10px 15px; // Más espacio
+    padding: 10px 15px; 
     display: inline-block;
-    font-family: 'AvenirNextLTPro-demi';
+    font-family: 'AvenirNextLTPro-regular';
 }
 //JR 18/05
 .cate-img a {

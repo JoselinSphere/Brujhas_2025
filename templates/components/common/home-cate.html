@@ -74,33 +74,42 @@
                                 }
                             ]
                             }'>
-                        {{#each categories }}
-                        <!-- <div class="home-cate-item col-12 pre-col"> -->
+
+                        {{#each categories}}
+                        {{#if children}}
+                        {{#each children}}
                         <div class="col-12 col-sm-6 col-md-3 mb-4">
-                        <div class="cate-img">
-                            <a href="{{url}}">
-                            <img src="{{getImage image}}" alt="{{name}}">
-                            <div class="cate-ti-overlay">
-                                <span class="catename">{{name}}</span>
-                                <a href="{{url}}" class="cate-btn cate-btn-desktop-only">VER TODO</a>
+                            <div class="cate-img">
+                                <a href="{{url}}">
+                                    {{#if image}}
+                                    <img src="{{getImage image}}" alt="{{name}}">
+                                    {{else}}
+                                    <img src="{{getImage ../image}}" alt="{{name}}">
+                                    <!-- Usa imagen de categoría padre si no tiene propia -->
+                                    {{/if}}
+                                    <div class="cate-ti-overlay">
+                                        <span class="catename">{{name}}</span>
+                                        <a href="{{url}}" class="cate-btn">VER TODO</a>
+                                    </div>
+                                </a>
                             </div>
-                            </a>
-                        </div>
                         </div>
                         {{/each}}
+                        {{/if}}
+                        {{/each}}
                     </section>
-                    <!-- Flecha izquierda MOBILE--> 
+                    <!-- Flecha izquierda MOBILE-->
                     <span class="mobile-slide-arrow left-arrow">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M15 6l-6 6 6 6" fill="none" stroke="black" stroke-width="2"/>
-                    </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15 6l-6 6 6 6" fill="none" stroke="black" stroke-width="2" />
+                        </svg>
                     </span>
 
                     <!-- Flecha derecha MOBILE-->
                     <span class="mobile-slide-arrow right-arrow">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M9 6l6 6-6 6" fill="none" stroke="black" stroke-width="2"/>
-                    </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 6l6 6-6 6" fill="none" stroke="black" stroke-width="2" />
+                        </svg>
                     </span>
                 </div>
             </div>
