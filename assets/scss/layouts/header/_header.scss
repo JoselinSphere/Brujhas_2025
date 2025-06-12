@@ -405,9 +405,9 @@
        
     }
 }
-.header .row{
-    align-items: center;
-}
+// .header .row{
+//     align-items: center;
+// }
 .header-logo-image-unknown-size { // 5
     max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
 

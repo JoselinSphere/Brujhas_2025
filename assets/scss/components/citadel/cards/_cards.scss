@@ -583,6 +583,7 @@
     .featured-caption .price--discounted, .featured-caption .price--non-sale, .price--rrp {
         font-size: 14px !important;
     }
+
     .card-figure:hover .card-figure {
         opacity: 1;
     }
@@ -591,13 +592,15 @@
     .card-body {
         padding-top: 0px;
         //padding-left: 7px;
-    //padding: 0px 0px 0px 10px; // se aumenta el padding
-}
-    .countdown-amount{
+        //padding: 0px 0px 0px 10px; // se aumenta el padding
+    }
+
+    .countdown-amount {
         font-size: 20px !important;
         padding: 6px 18px !important;
         margin-right: 5px!important;
     }
+
     // .productGrid .card-img-container img{
     //     height: 350px;
     // }
@@ -795,14 +798,14 @@
 
 /* Botón Comprar - ocupa 75% */
 .btn-comprar {
-    flex: 0 0 75%; 
+    flex: 0 0 75%;
     background-color: #000;
     color: #fff;
     font-size: 14px;
     text-align: center;
-    padding: 10px 47px; 
+    padding: 10px 47px;
     border: none;
-    height: 30px; 
+    height: 30px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -826,14 +829,100 @@
 }
 
 
+// Sphere: Grilla de busqueda 
+/* Quick Search Cards - Estilos corregidos y uniformes para resultados de búsqueda rápida */
 
+.quick-search-grid .quick-search-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
 
+.quick-search-grid .quick-search-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
+.quick-search-grid .quick-search-figure {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
 
+.quick-search-grid .quick-search-figure .card-img-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+}
 
+.quick-search-grid .quick-search-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.3s ease;
+}
 
+.quick-search-grid .quick-search-figure:hover img {
+    transform: scale(1.03);
+}
 
+.quick-search-grid .quick-search-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    padding: 0.75rem;
+    text-align: center;
+    background: white;
+}
 
+.quick-search-grid .quick-search-title {
+    font-size: 0.875rem;
+    line-height: 1.3;
+    margin: 0 0 0.25rem 0;
+    font-weight: 500;
+    color: #000000;
+}
 
+.quick-search-grid .quick-search-title a {
+    color: inherit;
+    text-decoration: none;
+}
 
+.quick-search-grid .quick-search-brand {
+    font-size: 0.75rem;
+    color: #000000;
+    margin: 0 0 0.25rem 0;
+}
 
+.quick-search-grid .quick-search-price {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.quick-search-grid .price-section--withoutTax {
+    color: #000000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .quick-search-grid .quick-search-figure {
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    .quick-search-grid .quick-search-title {
+        font-size: 0.8125rem;
+    }
+}

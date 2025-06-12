@@ -1,8 +1,10 @@
 {{#if product_results.products}}
     {{> components/common/modal/modal-close-btn additional_attr='data-drop-down-close'}}
-    <ul class="productGrid" {{#if settings.data_tag_enabled}} data-list-name="Quick Search Results" {{/if}}>
+
+    <div class="row quick-search-grid" {{#if settings.data_tag_enabled}} data-list-name="Quick Search Results" {{/if}}>
         {{#each product_results.products}}
-        <li class="product">
+        <!-- Shere: agregar division de card en el buscador -->
+            <div class="col-6 col-md-3 mb-3">
                 {{> components/products/quick-card
                         settings=../settings
                         alternate=true
@@ -12,9 +14,9 @@
                         event="list"
                         position=(add @index 1)
                 }}
-        </li>
+            </div>
         {{/each}}
-    </ul>
+    </div>
 {{else}}
     <p class="quickSearchMessage">
         {{{lang 'search.results.quick_count' count=pagination.product_results.total search_query=(sanitize forms.search.query) }}}

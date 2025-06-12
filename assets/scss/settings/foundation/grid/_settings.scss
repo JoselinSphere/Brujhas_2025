@@ -278,7 +278,7 @@ $last-child-float:              $opposite-direction;
     min-height: 1px;
     // espacios entre tarjetas en desktop 
     padding-right: 10px;
-    padding-left: 10px;
+    //padding-left: 10px;
 }
 .col-1 {
     -webkit-box-flex: 0;
@@ -445,6 +445,8 @@ $last-child-float:              $opposite-direction;
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
         max-width: 25%;
+        margin-top: 12px;
+        height: 410px;
     }
     .col-md-4 {
         -webkit-box-flex: 0;
@@ -656,4 +658,11 @@ $last-child-float:              $opposite-direction;
     padding-left: 0px;
 
 }
+}
+//Sphere: espacio entre card version Mobile
+@media (max-width: 767px) {
+.col-md-3 {
+        margin-top: 10px;
+
+    }
 }
