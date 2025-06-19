@@ -165,13 +165,14 @@ $last-child-float:              $opposite-direction;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -12px;  // Sphere: 13/06/2025 antes -15px
+    margin-left: -10px;   // Sphere: 13/06/2025 antes -15px
 }
 .container {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+    margin-top: 15px;
     margin-right: auto;
     margin-left: auto;
 }

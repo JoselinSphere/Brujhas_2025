@@ -78,17 +78,14 @@ dl, ol, ul{
     }
 }
 @media (min-width: 1200px) and (max-width: 1409px){
-    /*.container {
+    .container {
         max-width: 1170px !important;
-    }*/
+    }
 }
 @media (min-width: 320px) and (max-width: 991px){
     .container {
         max-width: 100% !important;
     }
-}
-.container{
-    padding: 0 15px;
 }
 a:hover{
     text-decoration: none;
@@ -100,6 +97,11 @@ a:hover{
 }
 
 @media(max-width: 800px){
+    .container .height-left{
+    //padding: 0 15px;
+    padding-left: 30px;
+    //padding-right: 22px;
+}
     /* Solo visible en móvil */
      .mobile-slide-arrow {
     position: absolute;
@@ -2989,6 +2991,10 @@ svg{
     .productGrid .product{
         margin-bottom: 0px !important;
     }
+   .espacio li{ 
+    background-color: red;
+        padding-left: 20px;
+   }
     .card-title{
         font-size: 14px;
     }

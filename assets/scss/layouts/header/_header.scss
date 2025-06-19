@@ -48,6 +48,7 @@
 }
 .mycustom-header{
     padding: 20px 15px!important;
+    margin-top: 2px;
 }
 #header_placeholder{
     height: 126px;
@@ -121,7 +122,7 @@
 }
 .top-bar {
     background: stencilColor("top-header-backgroundColor");
-    padding: 10px 0;
+    padding: 1px 0;
     text-align: center;
     z-index: 0;
     margin-top: 0px;
@@ -205,6 +206,8 @@
     top: 0;
     width: 100%;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .18%);
+    //padding-top: 2px;
+    //height: 80px;
 
     @include breakpoint("medium") {
         // border-bottom: container("border");
@@ -227,6 +230,7 @@
 }
 .default .header{
     box-shadow: none;
+    //height: 60px;
 }
 .fixed {
     position: fixed;
@@ -558,6 +562,7 @@
     }
     .mycustom-header {
         padding: 0px 15px !important;
+        margin-top: 5px;
     }
     .header-social-icons,.head-contact,.head-ask{
         display: none;
@@ -584,6 +589,8 @@
     }
     .header .row{
         justify-content: space-around;
+        max-height:412px; // tamaño maximo del visor de busqueda 
+        //height: 20px;
     }
     //JRivas 21/03/2025
     .top-bar {
