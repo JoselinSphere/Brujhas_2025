@@ -2334,7 +2334,8 @@ svg{
     }
     //Sphere: cambio de tipo de letra al nav principal
     .navPages-item .navPages-action {
-        padding: 21px 12px!important;
+        padding: 12px 12px!important;
+        margin-top: -12px;
         font-family: 'AvenirNextLTPro-regular' !important;
         color: #000;
     }

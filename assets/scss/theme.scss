@@ -307,10 +307,7 @@
     .category-title {
         text-align: center;
     }
-    // Ocultar categorias en mobile
-    // .category-container.container .row.category-content.align-items-start {
-    //   display: none;
-    // }
+
     .category-container.container .row.category-content.align-items-start .subcategories-container{
         display: none;
     }

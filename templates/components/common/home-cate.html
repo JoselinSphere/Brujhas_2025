@@ -82,9 +82,9 @@
                             <div class="cate-img">
                                 <a href="{{url}}">
                                     {{#if image}}
-                                    <img src="{{getImage image}}" alt="{{name}}">
+                                    <img src="{{getImage image format='webp'}}" alt="{{name}}">
                                     {{else}}
-                                    <img src="{{getImage ../image}}" alt="{{name}}">
+                                    <img src="{{getImage ../image format='webp'}}" alt="{{name}}">
                                     <!-- Usa imagen de categoría padre si no tiene propia -->
                                     {{/if}}
                                     <div class="cate-ti-overlay">
@@ -194,7 +194,7 @@
                         <div class="home-cate-item col-12 pre-col">
                             <div class="catebg">
                                 <div class="cate-img">
-                                    <a class="" href="{{url}}"><img src="{{getImage image}}" alt="Category-image"></a>
+                                    <a class="" href="{{url}}"><img src="{{getImage image format='webp'}}" alt="Category-image"></a>
                                 </div>
                             </div>
                             <div class="cate-ti">
@@ -287,7 +287,7 @@
                         <div class="home-cate-item col-12 pre-col">
                             <div class="catebg">
                                 <div class="cate-img">
-                                    <a class="" href="{{url}}"><img src="{{getImage image}}" alt="Category-image"></a>
+                                    <a class="" href="{{url}}"><img src="{{getImage image format='webp'}}" alt="Category-image"></a>
                                 </div>
                             </div>
                             <div class="cate-ti">

@@ -80,24 +80,29 @@ attr-cards-ids="{{id}}"
         {{/if}}
         {{/if}}
 
-    <figure class="card-figure featured-imag">
-        <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
-            <div class="card-img-container">
-                {{> components/common/responsive-img
-                    image=image
-                    class="card-image"
-                    fallback_size=theme_settings.productgallery_size
-                    lazyload=theme_settings.lazyload_mode
-                    default_image=theme_settings.default_image_product
-                }}
-            </div>
-            {{#each (limit images 2)}}
-                {{#if @index '>' 0}}
-                    <img src="{{getImage this 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}" class="second-img">
-                {{/if}}
-            {{/each}}
-        </a>
-    </figure>
+   <figure class="card-figure featured-imag">
+    <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+        <div class="card-img-container">
+            <picture>
+                <source srcset="{{getImage image 'productgallery_size' format='webp'}}" type="image/webp">
+                <img 
+                    src="{{getImage image 'productgallery_size'}}"
+                    alt="{{image.alt}}"
+                    title="{{image.alt}}"
+                    class="card-image lazyload"
+                    loading="lazy">
+            </picture>
+        </div>
+
+        {{#each (limit images 2)}}
+            {{#if @index '>' 0}}
+            <!-- JRivas: 19/06/2025 -->
+                <img src="{{getImage this 'productgallery_size' format='webp'}}" alt="{{this.alt}}" title="{{this.alt}}" class="second-img lazyload" loading="lazy">
+            {{/if}}
+        {{/each}}
+    </a>
+</figure>
+
 
     {{#if theme_settings.theme_fashion}}
     <div class="card-body">
@@ -184,9 +189,9 @@ attr-cards-ids="{{id}}"
                 {{#unless hide_product_quick_view}}
                 {{#if theme_settings.show_product_quick_view}}
                 {{#if settings.data_tag_enabled}}
-                <button class="button button--small card-figcaption-button quickview" data-event-type="product-click" data-product-id="{{id}}">{{lang 'products.quick_view'}}<svg width="16px" height="16px"><use xlink:href="#bquick"></use></svg></button>
+                <button class="button button--small card-figcaption-button quickview" data-event-type="product-click" data-product-id="{{id}}">{{lang 'products.quick_view'}}<svg width="17px" height="20px"><use xlink:href="#bquick"></use></svg></button>
                 {{else}}
-                <button class="button button--small card-figcaption-button quickview" data-product-id="{{id}}">{{lang 'products.quick_view'}}<svg width="16px" height="16px"><use xlink:href="#bquick"></use></svg></button>
+                <button class="button button--small card-figcaption-button quickview" data-product-id="{{id}}">{{lang 'products.quick_view'}}<svg width="17px" height="20px"><use xlink:href="#bquick"></use></svg></button>
                 {{/if}}
                 {{/if}}
                 {{/unless}}
@@ -204,51 +209,32 @@ attr-cards-ids="{{id}}"
                         {{#if show_cart_action}}
                             {{#if has_options}}
                                 <a href="{{url}}" data-event-type="product-click" title="{{lang 'products.choose_options'}}" class="button button--small card-figcaption-button myadcart" data-product-id="{{id}}">
-                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="16" height="16">
+                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="17" height="20">
                                     <span class="cart-text">{{lang 'elegir opción'}}</span></a>
                             {{/if}}
                             {{#if pre_order}}
                                 <a href="{{pre_order_add_to_cart_url}}" title="{{lang 'products.pre_order'}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart">
-                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="16" height="16">
+                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="17" height="20">
                                     <span class="cart-text">{{lang 'pedido anticipado'}}</span></a>
                             {{/if}}
                             {{#if add_to_cart_url }}
                                 <a href="{{add_to_cart_url}}" title="{{lang 'products.add_to_cart'}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart">
-                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="16" height="16">
+                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="17" height="20">
                                     <span class="cart-text">{{lang 'añadir al carrito'}}</span></a>
                             {{/if}}
                             {{#if out_of_stock_message }}
                                 <a href="{{url}}" title="{{out_of_stock_message}}" data-event-type="product-click" class="button button--small card-figcaption-button myadcart" data-product-id="{{id}}">
-                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="16" height="16">
+                                    <img src="{{cdn 'assets/icons/bolsa.png'}}" alt="Carrito" width="17" height="20">
                                     <span class="cart-text">{{lang 'agotado'}}</span></a>
                             {{/if}}
                         {{/if}}
                     {{/or}}
                 </div>
-                 <!-- Remover iconos JRivas 05/06/2025 -->
-                <!-- wishlist icon -->
-                <!-- {{#if settings.show_wishlist}}
-                    <button href="/wishlist.php?action=add&product_id={{id}}" aria-label="wishlist" class="wishlist button{{#if theme_settings.show_product_wishlist_mb}} show-mobile{{/if}} card-figcaption-button">
-                        <svg class="icon"><use xlink:href="#hwishlist"/></svg>
-                        <span class="text">{{lang 'account.wishlists.add'}}</span> 
-                    </button>
-                {{/if}} -->
                 
             </div>
         </figcaption> 
     </div>
-    <!-- JRivas Agregar etiqueta de nuevo abajo en el card -->
-    <!-- <div class="etiquetaNuevo">
-        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-        {{#if show_cart_action}}
-        {{#if has_options}}
-                <span class="product-label product-label--new">
-                    Nuevo
-                </span>
-            {{/if}}
-        {{/if}}
-        {{/or}}
-    </div> -->
+
     {{else}} 
     {{#if theme_settings.theme_automotive}}
     <div class="card-body">

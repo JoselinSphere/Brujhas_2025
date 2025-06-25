@@ -76,7 +76,8 @@ attr-cards-ids="{{id}}"
             </div>
             {{#each (limit images 2)}}
                 {{#if @index '>' 0}}
-                    <img src="{{getImage this 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}" class="second-img">
+                    <img src="{{getImage this 'productgallery_size' format='webp'}}" alt="{{this.alt}}" title="{{this.alt}}" class="second-img">
+                    <!-- <img src="{{getImage this 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}" class="second-img"> -->
                 {{/if}}
             {{/each}}
         </a>

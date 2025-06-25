@@ -22,17 +22,21 @@
                 <figure class="productView-image"
                     data-image-gallery-main
                     {{#if product.main_image}}
-                    data-zoom-image="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size }}"
+
+                    data-zoom-image="{{getImageSrcset product.main_image 1x=theme_settings.zoom_size format='webp'}}"
+                    
+                    
                     {{/if}}
                     >
                     <div class="productView-img-container">
                         {{!-- Remove the surrounding a-element if there is no main image. --}}
                         {{#if product.main_image}}
-                        <a href="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size}}"
+                        <a href="{{getImageSrcset product.main_image 1x=theme_settings.zoom_size format='webp'}}"
                             target="_blank">
                             {{/if}}
                             {{> components/common/responsive-img
                             image=product.main_image
+                            format='webp'
                             class="productView-image--default"
                             fallback_size=theme_settings.product_size
                             lazyload=theme_settings.lazyload_mode
@@ -74,12 +78,13 @@
                 <li class="productView-thumbnail">
                     <a
                         class="productView-thumbnail-link"
-                        href="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
+                        href="{{getImageSrcset this 1x=../theme_settings.zoom_size format='webp'}}"
                         data-image-gallery-item
-                        data-image-gallery-new-image-url="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.product_size}}"
-                        data-image-gallery-new-image-srcset="{{getImageSrcset this use_default_sizes=true}}"
-                        data-image-gallery-zoom-image-url="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
+                        data-image-gallery-new-image-url="{{getImageSrcset this 1x=../theme_settings.product_size format='webp'}}"
+                        data-image-gallery-new-image-srcset="{{getImageSrcset this use_default_sizes=true format='webp'}}"
+                        data-image-gallery-zoom-image-url="{{getImageSrcset this 1x=../theme_settings.zoom_size format='webp'}}"
                     >
+
                     {{> components/common/responsive-img
                         image=this
                         fallback_size=../theme_settings.productview_thumb_size
